@@ -78,6 +78,14 @@ defined('EXIT_DATABASE')       || define('EXIT_DATABASE', 8);       // database 
 defined('EXIT__AUTO_MIN')      || define('EXIT__AUTO_MIN', 9);      // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      || define('EXIT__AUTO_MAX', 125);    // highest automatically-assigned error code
 
+// defined('BASEPATH', 'no direct script access allowed');
+
+//baseurl untuk menghubungkan file assets (css,js,img)
+// defined('BASEURL')      || define('BASEURL', 'http://localhost/pustaka-booking/public');
+// defined('CSS')      || define('CSS', BASEURL.'public/assets/css/');
+// defined('JS')      || define('JS', BASEURL . 'public/assets/js/');
+// defined('IMG')      || define('IMG', BASEURL . 'public/assets/img/'); 
+
 /**
  * @deprecated Use \CodeIgniter\Events\Events::PRIORITY_LOW instead.
  */
