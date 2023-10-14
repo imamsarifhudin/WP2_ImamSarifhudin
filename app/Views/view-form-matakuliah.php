@@ -5,20 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>From Input Matakuliah</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
     <center>
         <form action="<?= base_url('matakuliah/cetak'); ?>" method="post">
             <table>
+                <br>
                 <tr>
                     <th colspan="3">
-                        Form Input Data Mata Kuliah
+                        <center>Form Input Data Mata Kuliah</center>
                     </th>
                 </tr>
                 <tr>
                     <td colspan="3">
                         <hr>
+                        <?php if (isset($validation)) { ?>
+                            <div class="alert alert-danger" role="alert">
+                                <?php echo $validation->listErrors() ?>
+                            </div>
+                        <?php } ?>
                     </td>
                 </tr>
                 <tr>
@@ -30,14 +37,14 @@
                 </tr>
                 <tr>
                     <th>Nama MTK</th>
-                    <td>:</td>
+                    <th>:</th>
                     <td>
                         <input type="text" name="nama" id="nama">
                     </td>
                 </tr>
                 <tr>
                     <th>SKS</th>
-                    <td>:</td>
+                    <th>:</th>
                     <td>
                         <select name="sks" id="sks">
                             <option value="">Pilih SKS</option>
@@ -55,6 +62,8 @@
             </table>
         </form>
     </center>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
 </html>

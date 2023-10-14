@@ -29,16 +29,16 @@
             </tr>
             <tr>
                 <th>Nama MTK</th>
-                <td>:</td>
+                <th>:</th>
                 <td>
-                    <?= $nama; ?>
+                    <?= $nama ?>
                 </td>
             </tr>
             <tr>
                 <th>SKS</th>
-                <td>:</td>
+                <th>:</th>
                 <td>
-                    <?= $sks; ?>
+                    <?= $sks ?>
                 </td>
             </tr>
             <tr>
