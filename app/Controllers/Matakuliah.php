@@ -20,21 +20,21 @@ class Matakuliah extends BaseController
             'kode' => [
                 'rules'  => 'required|min_length[3]',
                 'errors' => [
-                    'required' => 'Kode Matakuliah Harus diisi',
+                    'required' => 'Kode matakuliah harus diisi',
                     'min_length' => 'Kode terlalu pendek'
                 ]
             ],
             'nama'    => [
                 'rules'  => 'required|min_length[3]',
                 'errors' => [
-                    'required' => 'Nama Matakuliah Harus diisi',
+                    'required' => 'Nama matakuliah harus diisi',
                     'min_length' => 'Nama terlalu pendek'
                 ]
             ],
             'sks'    => [
                 'rules'  => 'required',
                 'errors' => [
-                    'required' => 'Wajib pilih Sks nya',
+                    'required' => 'Wajib pilih sksnya',
                 ]
             ],
         ]);
