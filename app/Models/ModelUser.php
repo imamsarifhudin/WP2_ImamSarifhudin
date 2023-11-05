@@ -14,10 +14,22 @@ class ModelUser extends Model
         $this->insert($data);
     }
 
+    // public function cekData($where = null)
+    // {
+    //     return $this->where($where)->get()->getRowArray();
+    // }
     public function cekData($where = null)
     {
-        return $this->where($where)->get()->getRowArray();
+        $db = \Config\Database::connect(); // Get the database connection instance
+        $builder = $db->table('user');
+
+        if ($where !== null) {
+            $builder->where($where);
+        }
+
+        return $builder->get();
     }
+
 
     public function getUserWhere($where = null)
     {
