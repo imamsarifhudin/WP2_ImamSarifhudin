@@ -1,48 +1,31 @@
 <?php
-
-namespace App\Models;
-
-use CodeIgniter\Model;
-
-class ModelUser extends Model
+defined('BASEPATH') or exit('No direct script access allowed');
+class ModelUser extends CI_Model
 {
-    protected $table = 'user';
-    protected $primaryKey = 'id'; // Ganti 'id' dengan primary key tabel user jika berbeda
-
     public function simpanData($data = null)
     {
-        $this->insert($data);
+        $this->db->insert('user', $data);
     }
-
-    // public function cekData($where = null)
-    // {
-    //     return $this->where($where)->get()->getRowArray();
-    // }
     public function cekData($where = null)
     {
-        $db = \Config\Database::connect(); // Get the database connection instance
-        $builder = $db->table('user');
-
-        if ($where !== null) {
-            $builder->where($where);
-        }
-
-        return $builder->get();
+        return $this->db->get_where('user', $where);
     }
-
-
     public function getUserWhere($where = null)
     {
-        return $this->where($where)->get()->getRowArray();
+        return $this->db->get_where('user', $where);
     }
-
     public function cekUserAccess($where = null)
     {
-        return $this->db->table('access_menu')->where($where)->get()->getResultArray();
+        $this->db->select('*');
+        $this->db->from('access_menu');
+        $this->db->where($where);
+        return $this->db->get();
     }
-
     public function getUserLimit()
     {
-        return $this->limit(10, 0)->get()->getResultArray();
+        $this->db->select('*');
+        $this->db->from('user');
+        $this->db->limit(10, 0);
+        return $this->db->get();
     }
 }
